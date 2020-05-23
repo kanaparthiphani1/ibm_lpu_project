@@ -1,0 +1,97 @@
+
+<body style="background-image: url('assets/news-image1.jpg'); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" >
+
+      <img src="../../../assets/logo.png" style="max-width: 50px">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarmenu">
+            <span class="navbar-toggler-icon" style="color: azure;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarmenu" style="position:relative;left: 75%">
+            <ul class="navbar-nav" >
+                <li class="nav-item" ><a  (click)="onHome()" class="nav-link" routerLinkActive="active" ><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
+              <li class="nav-item" ><a  (click)="onChange()" class="nav-link" routerLinkActive="active" ><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Account</a></li>
+
+
+                <li class="nav-item" ><a  class="nav-link" (click)="onLogout()" ><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Log
+                            out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   <div class="container-fluid">
+
+
+             <h3 style="text-align: center;    text-align: center;
+    height: 90px;
+    position: fixed;
+    position: relative;
+    top: 30px;
+    font-size: 40px;
+    font-weight: bolder;">Appointments Data</h3>
+     <div class="card" style="border-radius: 20px">
+
+       <div class="card-body">
+
+         <a style="margin-right: 20%;margin-left: 20%;background-color: rgba(255,165,0,0.48);color: #423f3f;border: 0px" class="btn btn-primary" (click)="loadAppoints()">In Progress</a>
+         <a style="margin-right: 20%;background-color: rgba(0,128,0,0.55);color: #423f3f;border: 0px" class="btn btn-primary" (click)="loadApproved()">Approved</a>
+         <a class="btn btn-primary" style="background-color: rgba(255,0,0,0.51);color: #423f3f;border: 0px" (click)="loadRejected()">Rejected</a>
+
+       </div>
+     </div>
+            <div class="card-body" style="opacity: 0.96;filter: blur(0px) brightness(106%);background-color: #e3e5e9;">
+
+                <div class="table-responsive table mt-2 zg table-striped table-light" role="grid"
+                    aria-describedby="dataTable_info" style="opacity: 1;filter: blur(0px);background-color: #d7dadf;">
+                    <table class="table dataTable my-0" id="mydatatable">
+                        <thead>
+                            <tr
+                                style="background-color: rgb(10, 10, 10);opacity: 1;filter: brightness(111%) contrast(82%) saturate(99%);font-weight: bold;margin: 0;height: 53px;margin-right: 0px;color: rgb(240, 241, 245);">
+                                <th scope="col" style="color: rgb(243, 243, 247);">S.No</th>
+                                <th scope="col" style="color: rgb(253, 253, 255);">FirstName</th>
+                                <th scope="col" style="color: rgb(253, 253, 255);">LastName</th>
+                                <th scope="col" style="color: rgb(237, 238, 243);">Age</th>
+                                <th scope="col" style="color: rgb(244, 245, 250);">Email</th>
+                                <th scope="col" style="color: rgb(244, 245, 247);">Phone</th>
+                                <th scope="col" style="color: rgb(242, 243, 248);">Gender</th>
+                                <th scope="col" style="color: rgb(236, 237, 240);">Date</th>
+                                <th scope="col" style="color: rgb(241, 241, 247);">Description</th>
+                                <th scope="col" style="color: rgb(242, 243, 248);">DoctorName</th>
+                                <th scope="col" style="color: rgb(238, 239, 245);">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="color: rgb(4,5,7);">
+                            <tr *ngFor="let appoint of appoints ">
+                                <td>{{appoint.appointmentId}}</td>
+                                <td>{{appoint.firstName}}</td>
+                                <td>{{appoint.lastName}}</td>
+                                <td>{{appoint.age}}</td>
+                                <td>{{appoint.email}}</td>
+                                <td>{{appoint.mobileNumber}}</td>
+                                <td>{{appoint.gender}}</td>
+                                <td>{{appoint.date | date}}</td>
+                                <td>{{appoint.description}}</td>
+                                <td>{{appoint.doctorName}}</td>
+                                <td>
+                                    <button class="btn btn-success" id="approve" (click)= "approveAppoint(appoint.appointmentId)" style="width: 100%;border-radius: 15px;">Approve</button>
+                                    <button (click)="rejectAppoint(appoint.appointmentId)" id="reject"  style="width: 100%; border-radius: 15px;" class="btn btn-danger">Reject</button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    </body>

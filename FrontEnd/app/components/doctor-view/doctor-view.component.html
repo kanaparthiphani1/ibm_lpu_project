@@ -1,0 +1,41 @@
+<div class="menu-sidebar-content js-scrollbar1" style="display:block;background-color: #818a91;width: 100%;margin-bottom: 120px;border-top: black" >
+
+  <div class="Caption">
+    <h3 style="display: inline-block;
+    position: relative;
+    top: 60px;
+    left: 40%;
+    font-size: 30px;
+    font-weight: bold;
+font-family: Oswald">OUR DOCTORS</h3>
+  </div>
+  <nav class="navbar-sidebar" style="
+    margin-right: 0px;
+    margin: 0px;    padding: 20px;display: inline-block;    width: 20%;
+    position: relative;
+    left: 70%;
+">
+
+    <span style="color: black;
+    display: inline-block;
+    position: relative;
+    right: 79px;
+    top: 40px;font-family: 'Montserrat', sans-serif;">
+      View By :
+    </span>
+
+      <select style="padding: 10px" id="select1" [(ngModel)]="this.id">
+        <option selected style="text-align: center" *ngFor="let temp of spec"  value="{{temp.specId}}" >{{temp.specName}}</option>
+
+      </select>
+
+    <a class="btn btn-success" style="display: inline-block;position: absolute;width: 120px;
+    margin: 10px;" routerLink="doctors/{{id}}">Apply Filter</a>
+  </nav>
+</div>
+
+<div style="display: inline-block;position: relative;
+    bottom: 100px;border-top: black;
+">
+  <router-outlet></router-outlet>
+</div>

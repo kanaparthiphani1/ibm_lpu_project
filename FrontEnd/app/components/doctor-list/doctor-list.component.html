@@ -1,0 +1,16 @@
+
+<div class="cardUpper">
+
+
+
+  <div class="card" style="width: 18rem;margin-right: 20px" *ngFor="let temp of doctors" >
+    <img src="assets/pic1.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{temp.firstName}}{{temp.lastName}}</h5>
+      <h6 class="card-title" name="designation"><i>{{temp.email}}</i></h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a  style="position:relative;left: 5px"  class="btn btn-success" (click)="onAppointment(temp.email)">Make an Appointment</a>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,102 @@
+
+<header >
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="height: 60px;">
+    <div class="container">
+      <img style="max-width: 50px;
+    position: relative;
+    left:20px;" src="assets/logo.png">
+      <img style="max-width: 100px;
+    position: relative;
+    left: 30px;" src="assets/name.png">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="bg-contact100">
+  <div class="container-contact100">
+    <div class="wrap-contact100" style="    height: 640px;">
+      <a class="btn btn-primary" style="height: 35px;
+    position: relative;
+    bottom: 70px;
+    right: 150px;
+    color: white;
+    padding: 20px;
+    padding-bottom: 40px !important;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+z-index: 111" (click)="onBack()">Go Back</a>
+      <div class="contact100-pic js-tilt" data-tilt>
+        <img src="assets/logo.png" style="position: relative;
+    right: 50%;">
+      </div>
+
+      <form class="contact100-form validate-form" [formGroup]="addForm">
+					<span class="contact100-form-title">
+						Get in touch
+					</span>
+
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+          <input class="input100" type="text" name="name" placeholder="Name" [(ngModel)]="emailReq.name" formControlName="firstName" name="name">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+
+          <div *ngIf="submitted && addForm.controls.firstName.errors">
+            <div class="text-danger" *ngIf="addForm.controls.firstName.errors.required" style="background-color: rgba(255,0,0,0.26);color: #818a91;border-radius: 10px;text-align: center">
+             <span style="color:#fcfcfc"> Name is required</span>
+            </div>
+            <div class="text-danger" *ngIf="addForm.controls.firstName.errors.pattern" style="background-color: rgba(255,0,0,0.26);color: #818a91;border-radius: 10px;text-align: center">
+              <span style="color:#fcfcfc"> Only Alphabets allowed.First letter must be a Capital letter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+          <input class="input100" type="text" name="email" placeholder="Email" formControlName="email" [(ngModel)]="emailReq.from" name="from">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+          <div *ngIf="submitted && addForm.controls.email.errors" style="background-color: rgba(255,0,0,0.26);color: #818a91;border-radius: 10px;text-align: center">
+            <div class="text-danger" *ngIf="addForm.controls.email.errors.required" >
+              <span style="color:#fcfcfc">Email is required</span>
+            </div>
+            <div class="text-danger" *ngIf="addForm.controls.email.errors.email">
+              <span style="color:#fcfcfc"> Email is invalid</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate="Message is required">
+          <textarea style="resize: none" class="input100" name="message" placeholder="Message" formControlName="lastName" [(ngModel)]="desc" name="desc"></textarea>
+          <span class="focus-input100"></span>
+          <div *ngIf="submitted && addForm.controls.lastName.errors" style="background-color: rgba(255,0,0,0.26);color: #818a91;border-radius: 10px;text-align: center">
+            <div class="text-danger" *ngIf="addForm.controls.lastName.errors.required">
+              <span style="color:#fcfcfc">Description is required;</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container-contact100-form-btn">
+          <button class="contact100-form-btn" (click)="onclick()">
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+<header>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+
+    <div class="container">
+      <img style="max-width: 50px;
+    position: relative;
+    right: 100px;" src="assets/logo.png">
+      <img style="max-width: 100px;
+    position: relative;
+    right: 90px;" src="assets/name.png">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" style="cursor: pointer" (click)="onHome()"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onLoginAdmin()"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onLoginEmployee()"><i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onJobApply()"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;Job Apply</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onLogin()"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Signin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<br>
+<br>
+<div class="container" style="text-align: center;">
+    <h4 style="font-family: fantasy;"> “If you don't <mark style="border-radius: 20px;">Sacrifice</mark> for what you want, what you want will become the <mark style="border-radius: 20px;">Sacrifice</mark>”</h4>
+
+</div>
+
+<div class="container register" style="border-radius: 15px;
+    margin-bottom: 80px;">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>You are 30 seconds away from earning your own money!</p>
+
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Apply to Save a Life</h3>
+                                <form (ngSubmit)="onApply()" class="row register-form">
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" [(ngModel)]="applied.firstName" name ="firstName" placeholder="First Name *"  />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" [(ngModel)]="applied.lastName" name ="lastName" placeholder="Last Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" [(ngModel)]="applied.age" name ="age"  placeholder="Age *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" [(ngModel)]="applied.gender"  value="MALE" checked>
+                                                    <span> Male </span>
+                                                </label>
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" [(ngModel)]="applied.gender"  value="FEMALE">
+                                                    <span>Female </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" [(ngModel)]="applied.email"  name="email" placeholder="Your Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" [(ngModel)]="applied.phone"  name="phone"  class="form-control" placeholder="Your Phone *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select [(ngModel)]="applied.specialization"  name="specialization" class="form-control">
+                                                <option class="hidden"   selected disabled>Select Profile</option>
+                                                <option value="DENTIST" >DENTIST</option>
+                                                <option value="PHYSICIAN">PHYSICIAN</option>
+                                                <option value="CARDIOLOGIST">CARDIOLOGIST</option>
+                                                <option value="DERMATOLOGIST">DERMATOLOGIST</option>
+                                                <option value="ENTSPECIALIST">ENTSPECIALIST</option>
+                                                <option value="RECEPTIONIST">RECEPTIONIST</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select [(ngModel)]="applied.role"  name="role" class="form-control">
+                                                <option class="hidden"  selected disabled>Select Role</option>
+                                                <option value="DOCTOR">DOCTOR</option>
+                                                <option value="RECEPTIONIST">RECEPTIONIST</option>
+
+                                            </select>
+                                        </div>
+
+
+                                        <input type="submit" class="btnRegister"  value="Apply"/>
+
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>

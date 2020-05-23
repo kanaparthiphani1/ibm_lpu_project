@@ -1,0 +1,118 @@
+<body style="background-image: url('images/slider1.jpg'); background-attachment: fixed; background-size: cover;">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <img src="assets/logo.png" style="max-width: 50px">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item ">
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="mx-auto order-0">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto" style="float: right;">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="onHome()"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onPatientList()"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Patients List</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">My Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+    <br>
+    <br>
+    <h1  style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" ><mark style="background-color: black;border-radius: 20px;color: white;">MEDICATION FORM</mark></h1>
+    <br>
+<div style="border: double; width: 90%; margin-left: 5%;margin-bottom: 50px; background-color: white; opacity: 80%; border-radius: 20px;">
+
+
+<div class="container p-5  bg-primary text-white" style="border-radius: 20px;" >
+    <img src="assets/logo.png" class="float-right"  width="130" height="130" align="middle">
+    <h1>CARE HOSPITAL</h1>
+    <p style="font-size:medium">
+        Jalandhar,Punjab<br>
+        www.Carehospitals.com
+    </p>
+</div>
+<br style="size: A3">
+<hr style=" width:70%;margin-left:1;">
+
+<div class="container" style="border: black; border-width:medium ;">
+        <form (ngSubmit)="onSubmit()" class="was-validated">
+
+            <h3>Doctor Info</h3>
+
+        <div class="form-group" >
+
+            <label for="DocInfo">Name:</label>
+            <input type="text" class="form-control" [(ngModel)]="medication.doctorName" name="doctorName" placeholder="Enter name" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            <br>
+            <label for="DocInfo">ID:</label>
+            <input type="text" class="form-control" [(ngModel)]="medication.doctorId" name="doctorId" placeholder="Enter ID" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+            <br style="size: A3">
+            <hr style=" width:95%;margin-left:1;">
+
+            <h3>Patient Info</h3>
+
+                <div class="form-group">
+
+                    <label for="patientInfo">Name:</label>
+                    <input type="text" class="form-control"  name="patientName" value={{appointment.firstName+appointment.lastName}} placeholder="Enter name" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                    <br>
+                    <label for="DocInfo">Email:</label>
+                    <input type="text" class="form-control"  name="patientEmail" placeholder="Enter Email" value={{appointment.email}} required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                    <br>
+                    <label for="DocInfo">Gender:</label>
+                    <input type="text" class="form-control"  name="patientGender" placeholder="Enter Gender" value={{appointment.gender}} required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <br style="size: A3">
+                <hr style=" width:95%;margin-left:1;">
+
+                <h3>Medication</h3>
+
+            <div class="form-group">
+                <label for="Medication"></label>
+                <textarea class="form-control" rows="5" [(ngModel)]="medication.medication" name="medication" placeholder="Enter Medication" required></textarea>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <button style="margin-left: 50%;margin-bottom: 50px" type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+</div>
+
+
+
+</div>
+
+
+
+</body>

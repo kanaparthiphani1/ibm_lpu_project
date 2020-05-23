@@ -1,0 +1,157 @@
+<div class="combineddiv">
+
+  <div id="wrapper" data-spy="scroll" data-target="#spy" class="">
+
+
+    <div class="row" id="ProfileCard">
+      <div class="small-12 medium-2 large-2 columns">
+        <div class="circle">
+          <!-- User Profile Image -->
+          <img class="profile-pic" src="http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg">
+
+          <!-- Default Image -->
+          <!-- <i class="fa fa-user fa-5x"></i> -->
+        </div>
+        <div class="p-image">
+          <i class="fa fa-camera upload-button" (click)="onPhoto()"></i>
+          <input class="file-upload" type="file" accept="image/*"/>
+        </div>
+
+      </div>
+      <div style="
+    display: inline-block;
+    position: relative;bottom: 35px;
+max-width: 100%;
+
+    ">
+        <h2 class="myName" style="position: relative;top: 63%;
+    left: 6%;
+    bottom: 80%;
+    font-size: 60px;
+}">{{user.first_name}} {{user.last_name}}</h2>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div id="page-content-wrapper" class="">
+
+
+  <div class="card" >
+    <div class="card-header">
+      <h1 id="card2" style="font-family: Jost">Personal Info</h1>
+    </div>
+    <div class="card-body">
+
+      <form [formGroup]="addForm" >
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFirstname">First Name</label>
+            <input type="text" class="form-control inputchange1" id="inputFirstname" placeholder="First Name" [(ngModel)]="user.first_name" readonly formControlName="first_name" >
+            <div *ngIf="submitted && addForm.controls.firstName.errors">
+              <div class="text-danger" *ngIf="addForm.controls.firstName.errors.required">
+                First Name is required..!
+              </div>
+              <div class="text-danger" *ngIf="addForm.controls.firstName.errors.pattern">
+                Only Alphabets allowed.First letter must be a Capital letter...!
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLastName">last Name</label>
+            <input type="text" class="form-control inputchange1" id="inputLastName" name="last_name" placeholder="Last Name" [(ngModel)]="user.last_name"  formControlName="last_name"   readonly>
+            <div *ngIf="submitted && addForm.controls.lastName.errors">
+              <div class="text-danger" *ngIf="addForm.controls.lastName.errors.required">
+                Last Name is required..!
+              </div>
+              <div class="text-danger" *ngIf="addForm.controls.lastName.errors.pattern">
+                Last Name length should not exceede 20 characters..!
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputmobile">Mobile</label>
+            <input type="number" class="form-control inputchange1" id="inputmobile" placeholder="Mobile" [(ngModel)]="user.mobile_number"  formControlName="mobile_number"  readonly >
+            <div *ngIf="submitted && addForm.controls.phone_Number.errors">
+              <div class="text-danger" *ngIf="addForm.controls.phone_Number.errors.required">
+                Mobile Number is required..!
+              </div>
+              <div class="text-danger" *ngIf="addForm.controls.phone_Number.errors.pattern">
+                Mobile Number should be of 10 digits..!
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6" style="display: inline-block">
+            <label for="inputDOB" >Age</label>
+            <input  type="number" class="form-control inputchange1" id="inputDOB" name="age" [(ngModel)]="user.age"  formControlName="age" readonly>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" [(ngModel)]="user.email" formControlName="email" readonly>
+        </div>
+      </form>
+      <a style="color: white"   id="changeName1" class="btn btn-primary changebuton" (click)="onEdit()">Edit</a>
+      <button  style="color: white;position: relative;float: right"   class="btn btn-success " type="submit" (click)="onUpdate()">Update</button>
+    </div>
+  </div>
+  <div class="card" >
+    <div class="card-header">
+      <h1 id="card3" style="font-family: Jost">Password Information</h1>
+    </div>
+    <div class="card-body">
+<form [formGroup]="addForm1" >
+      <div class="form-group row">
+        <label for="inputOldPassword3" class="col-sm-2 col-form-label">Old Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputOldPassword3" formControlName="old_password">
+          <div *ngIf="submitted && addForm.controls.old_password.errors">
+            <div class="text-danger" *ngIf="addForm.controls.old_password.errors.required">
+              Old Password should not be Blank
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputNewPassword3" class="col-sm-2 col-form-label">New Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputNewPassword3" formControlName="new_password">
+          <div *ngIf="submitted && addForm.controls.new_password.errors">
+            <div class="text-danger" *ngIf="addForm.controls.new_password.errors.required">
+              New Password should not be blank
+            </div>
+            <div class="text-danger" *ngIf="addForm.controls.new_password.errors.pattern">
+              Only Alpha Numemrics allowed and must be of minimum 6 characters and maximum 8
+              characters..!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputRePassword3" class="col-sm-2 col-form-label">Retype Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputRePassword3" formControlName="re_password">
+          <div *ngIf="submitted && addForm.controls.re_password.errors">
+            <div class="text-danger" *ngIf="addForm.controls.re_password.errors.required">
+              It should not be blank
+            </div>
+          </div>
+        </div>
+      </div>
+      <a  style="color: white;position: relative;float: right"   class="btn btn-success " (click)="onPasswordChange()">Update</a>
+</form>
+    </div>
+  </div>
+
+
+</div>
+
+<div id="snackbar">Succesfully Changed Password</div>
+<div id="snackbar1">Old Password is Incorrect. Try Again</div>
+<div id="snackbar2">New Password doesn't match with ReType Password</div>

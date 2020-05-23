@@ -1,0 +1,47 @@
+
+<header>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <img style="max-width: 50px;
+    position: relative;
+    right: 100px;" src="assets/logo.png">
+      <img style="max-width: 100px;
+    position: relative;
+    right: 90px;" src="assets/name.png">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive" style="position: relative;
+    left: 13%;">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" style="cursor: pointer" routerLink="userhome" ><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" routerLink="appoint-status"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" routerLink="userprofile"><i class="fa fa-user"></i> &nbsp;Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" routerLink="doctor"><i class="fa fa-users"></i> &nbsp;Doctors List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" (click)="onLogut()">Logout &nbsp;<i class="fa fa-sign-out" ></i></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>

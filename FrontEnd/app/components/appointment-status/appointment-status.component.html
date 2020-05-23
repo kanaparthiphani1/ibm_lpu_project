@@ -1,0 +1,25 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+<div>
+  <h2 style="text-align: center;margin-top: 30px;font-family: Josefin Sans">Your Appointments</h2>
+</div>
+<div class="container">
+<div class="card" *ngFor="let temp of appointstatus">
+
+  <div class="card-body" style="font-family: Dosis">
+    <h5 class="card-title" style="font-size: 30px;font-weight: bold">Doctor Name : {{temp.doctorName}}</h5><br>
+    <p class="card-text">Appointment Date : {{temp.date | date }}</p>
+    <p class="card-text">Description : {{temp.description}}</p>
+
+    <div style="display: inline;
+    float: right;
+    font-weight: 900;">
+      <div *ngIf=" temp.approved == 'In Progress';" style="color: orange"><i class="fa fa-spinner" aria-hidden="true"></i>&nbsp;In Progress</div>
+      <div *ngIf=" temp.approved == 'Yes';"style="color: green"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;Accepted</div>
+      <div *ngIf=" temp.approved == 'No';"style="color: red"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Rejected</div>
+
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,59 @@
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="height: 60px;">
+    <div class="container">
+      <img style="max-width: 50px;
+    position: relative;
+    right: 100px;" src="assets/logo.png">
+      <img style="max-width: 100px;
+    position: relative;
+    right: 90px;" src="assets/name.png">
+      <a class="navbar-brand">Hospital</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+  </nav>
+</header>
+
+
+
+<div class="container" style="position: relative;
+    width: 50%; height: 500px; bottom: 40px;   left: 10%;">
+
+
+
+  <div class="card" style="width: 70%;
+    height: 60%;
+    border: 0px;
+    bottom: 50px;
+    right: 40px;
+    position: relative;
+    top: 30%;">
+    <div class="card-body" style="border: 2px solid;border-radius: 20px;background-color: aliceblue;
+    box-shadow: 2px 2px 15px black;">
+      <label for="exampleInputEmail1" style="width: 100%;position: relative;top: 60px;
+   text-align: center;font-family: Jost;font-size: 20px">We have sent a code to your email<br>Enter the code here</label>
+      <form style="position:relative;left: 23%;
+    top: 30%;" [formGroup]="addForm">
+        <div class="form-group">
+
+          <input type="number" class="form-control" id="exampleInputEmail1" style="width: 55%;text-align: center;" [(ngModel)]="code" formControlName="otp" aria-describedby="emailHelp">
+          <div *ngIf="submitted && addForm.controls.otp.errors">
+            <div class="text-danger" *ngIf="addForm.controls.email.errors.required">
+              Email is required..!
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 55%" (click)="OnSubmit()">Submit</button>
+        </div>
+      <a (click)="backtosignup()"  style="position:relative;left:40px;text-decoration: none;cursor: pointer" >Back to Signup Page</a>
+      </form>
+    </div>
+  </div>
+
+</div>
+<div id="snackbar">Succesfully Registered <br>You can now login</div>
+<div id="snackbar1">Wrong Code</div>

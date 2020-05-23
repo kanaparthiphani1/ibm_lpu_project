@@ -1,0 +1,64 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
+<body style="background-image: url('assets/back3.jpeg');background-size: cover;height: 650px" >
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <img src="assets/logo.png" style="max-width: 50px">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarmenu">
+        <span class="navbar-toggler-icon" style="color: azure;"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarmenu" style="float: right;position: relative;left: 65%">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a routerLink="/admin" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
+            <li class="nav-item"><a routerLink="/employees" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Employee list</a></li>
+            <li class="nav-item"><a routerLink="/registeremployees" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Job Applicants</a></li>
+
+          <li class="nav-item"><a  class="nav-link" (click)="onlogout()" routerLinkActive="active" style="color: azure;">Logout&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+
+        </ul>
+    </div>
+</nav>
+<div >
+  <div style="padding: 30px;margin-top: 40px;position:relative;left: 55px;padding-bottom: 0px">
+  <div class="card" style="width: 18rem;background-color:rgba(129,138,145,0.58);height:350px;margin-right:10px;display: inline-block;padding: 40px;border: 2px solid black;border-radius: 25px;width: 30%;box-shadow: 1px 1px 20px black" >
+    <div class="card-body">
+      <i style="position:relative;left: 38%;font-size: 60px;bottom: 30px" class="fa fa-user-md" aria-hidden="true"></i>
+      <div style="position:relative;" class="card-title"><h3 style="text-align: center;font-family: Jost"> DOCTORS REGISTERED</h3></div>
+      <h3 style="position: relative;
+    left: 110px;
+    font-size: 100px;
+    /* width: 10px; */
+    /* margin: 0px; */
+    /* margin-right: 0px; */
+    top: 30px;font-family: Jost;color:#ffffff;" class="card-text">{{docnum}}</h3>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;background-color:rgba(129,138,145,0.58);display: inline-block;height:350px;margin-right:10px;padding: 40px;border: 2px solid black;border-radius: 25px;width: 30%;box-shadow: 1px 1px 20px black">
+    <div class="card-body">
+      <i style="position:relative;left: 38%;font-size: 60px;bottom: 30px" class="fa fa-users" aria-hidden="true"></i>
+      <div style="position:relative;" class="card-title"><h3 style="text-align: center;font-family: Jost">USERS REGISTERED</h3></div>
+      <h3 class="card-text" style="position: relative;
+    left: 110px;
+    font-size: 100px;
+    /* width: 10px; */
+    /* margin: 0px; */
+    /* margin-right: 0px; */
+    top: 40px;font-family: Jost;color:#000000;">{{usernum}}</h3>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;background-color:rgba(129,138,145,0.58);display: inline-block;height:350px;padding: 40px;border: 2px solid black;border-radius: 25px;width: 30%;box-shadow: 1px 1px 20px black">
+    <div class="card-body">
+      <i style="position:relative;left: 38%;font-size: 60px;bottom: 30px" class="fa fa-plus-square" aria-hidden="true"></i>
+      <div style="position:relative" class="card-title"><h3 style="text-align: center;font-family: Jost">EMPLOYEES REGISTERED</h3></div>
+      <h3 class="card-text" style="position: relative;
+    left: 110px;
+    font-size: 100px;
+    /* width: 10px; */
+    /* margin: 0px; */
+    /* margin-right: 0px; */
+    top: 30px;font-family: Jost;color:#ffffff;">{{empnum}}</h3>
+    </div>
+  </div>
+  </div>
+</div>
+</body>

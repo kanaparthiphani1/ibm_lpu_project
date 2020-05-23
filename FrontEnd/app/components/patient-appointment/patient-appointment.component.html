@@ -1,0 +1,52 @@
+
+
+<div class="container register" style="border-radius: 15px;margin-bottom: 60px">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+      <h3>Welcome</h3>
+      <p>Make an appointment, <br>'Dr.' is not just a prefix! It's a <mark style="border-radius: 20px;">super power</mark></p>
+      <button type="submit" name="" onclick="goBack()" > Back</button>
+    </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <form style="    position: relative;
+    top: 90px;
+    width: 70%;
+    left: 20%;">
+            <div class="form-group row">
+              <label  class="col-sm-2 col-form-label">Doctor Name</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control"  [value]="doctorName"  readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-2 col-form-label">Date</label>
+              <div class="col-sm-10">
+                <input type="date" id="datepicker2" min="2020-05-20" class="form-control" [(ngModel)]="appointment.date" name="date">
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-2 col-form-label ">Diabetic ?</label>
+              <div class="col-sm-10">
+                <input type="checkbox" id="checkbox" style="position: relative;top: 20px" [(ngModel)]="appointment.diabetic" name="diabetic">
+              </div>
+            </div>
+              <div class="form-group row">
+                <label  class="col-sm-2 col-form-label ">Description</label>
+                <div class="col-sm-10">
+                  <textarea style="resize: none" type="textarea" id="textField"  class="form-control"  [(ngModel)]="appointment.description" name="description"></textarea>
+                </div>
+              </div>
+
+            <a style="position:relative;float: right;color: white" class="btn btn-primary" (click)="onSubmit()">Submit</a>
+          </form> </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

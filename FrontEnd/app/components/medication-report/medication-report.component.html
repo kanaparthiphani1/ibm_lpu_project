@@ -1,0 +1,134 @@
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+
+<body style="background-image: url('assets/back3.jpeg'); background-attachment: fixed; background-size: cover;">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="border-radius: 0px !important;">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <img src="assets/logo.png"  height="50px" style="border-radius: 15px;" >
+      </li>
+    </ul>
+  </div>
+
+  <div class="mx-auto order-0">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" style="position: relative;
+    left: 25%;">
+    <ul class="navbar-nav ml-auto" style="position: relative;right: 50%;">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="onHome1()"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onAprrove() "><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Patients List</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" (click)="onHome()"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<br>
+<br>
+<h1  style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" ><mark style="background-color: black;border-radius: 20px;color: white;">MEDICATION REPORT</mark></h1>
+<br>
+
+<br>
+<br>
+
+
+
+<input type="email" [(ngModel)]="email" name="email" style="position: relative;left: 40%;width: 20%;padding: 7px" placeholder="Enter email" >
+<button style="margin-left: 40%;" type="submit" (click)="loadReport()" class="btn btn-primary"  >Submit</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="editor"></div>
+
+<div id="report" style="border: double; width: 70%; margin-left: 10%; background-color: white; opacity: 80%; border-radius: 20px;position:relative;left: 100px">
+
+  <div class="container p-5  bg-primary text-white" style="border-radius: 20px;" >
+    <img src="assets/logo.png" class="float-right"  width="130" height="130" align="middle">
+    <h1>CARE HOSPITAL</h1>
+    <p style="font-size:medium">
+      Jalandhar,Punjab<br>
+      www.Carehospitals.com
+    </p>
+  </div>
+  <br style="size: A3">
+  <hr style=" width:70%;margin-left:1px">
+<br>
+
+  <div class="container" style="border: black; border-width:medium ;">
+    <form >
+
+      <h3>Doctor Info</h3>
+
+      <div class="form-group" >
+
+        <label for="DocInfo">Name:</label>
+        <h4  name="doctorName" >{{medication.doctorName}}</h4>
+        <br>
+        <label for="DocInfo">ID:</label>
+        <h4  name="doctorId" >{{medication.doctorId}}</h4>
+
+      </div>
+
+      <br style="size: A3">
+      <hr style=" width:95%;margin-left:1;">
+
+      <h3>Patient Info</h3>
+
+      <div class="form-group">
+
+        <label for="patientInfo">Name:</label>
+        <h4 name="patientName" >{{medication.patientName}}</h4>
+        <br>
+        <label for="DocInfo">Email:</label>
+        <h4  name="patientEmail">{{medication.patientEmail}}</h4>
+        <br>
+        <label for="DocInfo">Gender:</label>
+        <h4 name="patientGender">{{medication.patientGender}}</h4>
+
+      </div>
+
+      <br style="size: A3">
+      <hr style=" width:95%;margin-left:1;">
+
+      <h3>Medication</h3>
+
+      <div class="form-group">
+        <label for="Medication"></label>
+        <h4  name="medication">{{medication.medication}}</h4>
+
+      </div>
+
+    </form>
+  </div>
+  <button class="btn btn-success" id="cmd" style="position: relative;left: 85%;">Generate Pdf</button>
+
+  <div class="container p-2 my-2 bg-primary text-white">
+    <p style="font-size:medium">
+
+    </p>
+  </div>
+
+</div>
+
+
+
+</body>

@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<body style="background-image: url('assets/back3.jpeg');background-repeat: no-repeat; background-size: cover; height: 900px ">
+
+<div style=" ">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="border-radius: 0px !important;">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                      <img src="assets/logo.png"  height="50px" style="border-radius: 15px;" >
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mx-auto order-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" style="position: relative;
+    left: 25%;">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" (click)="onHomw()"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="onAprrove() "><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Patients List</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" (click)="onHome()"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Account</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <div id="form"class="card text-center" style="width: 32%; margin-left: 5%; margin-top: 8%; background-color: rgba(255,255,255,0.71); border-radius: 30px;" >
+            <div class="card-body" style="height: 500px; background-color: rgba(255,255,255,0.53); border-radius: 15px ;">
+              <div class="card-header" style="background-color:black; color: rgba(255,255,255,0.57); height: 100px; border-top-right-radius: 15px;border-top-left-radius: 15px;">
+                <br>
+               <h1 style="margin-top: 10px;">OnDuty Panel</h1>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+
+              <button  style="border-radius: 15px; width: 50%; height: 10%; background-color: rgb(44, 124,178);color: oldlace;"  routerLink="/approveappointment">
+                Appointments
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+              <button  style="border-radius: 15px; width: 50%; height: 10%; background-color: rgb(44, 124,178);color: oldlace;" routerLink="/billing" >
+                 Billing
+              </button>
+
+            </div>
+          </div>
+
+
+    </div>
+    </body>

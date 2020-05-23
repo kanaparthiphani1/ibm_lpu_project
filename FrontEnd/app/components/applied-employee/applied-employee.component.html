@@ -1,0 +1,80 @@
+
+<body style="background-image: url('assets/news-image1.jpg'); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <img src="assets/logo.png" style="max-width: 50px">
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarmenu">
+    <span class="navbar-toggler-icon" style="color: azure;"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarmenu" style="float: right;position: relative;left: 65%">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a routerLink="/admin" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
+      <li class="nav-item"><a routerLink="/employees" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Employee list</a></li>
+      <li class="nav-item"><a routerLink="/registeremployees" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Job Applicants</a></li>
+
+      <li class="nav-item"><a  class="nav-link" (click)="onlogout()" routerLinkActive="active" style="color: azure;">Logout&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+
+    </ul>
+  </div>
+</nav>
+
+   <div class="container-fluid" >
+             <h3 style="    text-align: center;
+    height: 90px;
+    position: relative;
+    top: 30px;
+    font-size: 40px;
+    font-weight: bolder;">Applicants Data</h3>
+            <div class="card-body" style="opacity: 0.96;filter: blur(0px) brightness(106%);background-color: #e3e5e9;">
+
+                <div class="table-responsive table mt-2 zg table-striped table-light" role="grid"
+                    aria-describedby="dataTable_info" style="opacity: 1;filter: blur(0px);background-color: #d7dadf;">
+                    <table class="table dataTable my-0" id="mydatatable">
+                        <thead>
+                            <tr
+                                style="background-color: rgb(10, 10, 10);opacity: 1;filter: brightness(111%) contrast(82%) saturate(99%);font-weight: bold;margin: 0;height: 53px;margin-right: 0px;color: rgb(240, 241, 245);">
+                                <th scope="col" style="color: rgb(243, 243, 247);">S.No</th>
+                                <th scope="col" style="color: rgb(253, 253, 255);">FirstName</th>
+                                <th scope="col" style="color: rgb(253, 253, 255);">LastName</th>
+                                <th scope="col" style="color: rgb(237, 238, 243);">Age</th>
+                                <th scope="col" style="color: rgb(244, 245, 250);">Email</th>
+                                <th scope="col" style="color: rgb(244, 245, 247);">Phone</th>
+                                <th scope="col" style="color: rgb(242, 243, 248);">Gender</th>
+                                <th scope="col" style="color: rgb(236, 237, 240);">Role</th>
+                                <th scope="col" style="color: rgb(241, 241, 247);">Specialization</th>
+                                <th scope="col" style="color: rgb(238, 239, 245);">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="color: rgb(4,5,7);">
+                            <tr *ngFor="let employee of applies | async">
+                                <td>{{employee.id}}</td>
+                                <td>{{employee.firstName}}</td>
+                                <td>{{employee.lastName}}</td>
+                                <td>{{employee.age}}</td>
+                                <td>{{employee.email}}</td>
+                                <td>{{employee.phone}}</td>
+                                <td>{{employee.gender}}</td>
+                                <td>{{employee.role}}</td>
+                                <td>{{employee.specialization}}</td>
+                                <button class="btn btn-success" (click)= "approveEmployee(employee.id)" style="width: 100%;border-radius: 15px;">Approve</button>
+                                <button (click)="rejectEmployee(employee.id)" style="width: 100%; border-radius: 15px;" class="btn btn-danger">Reject</button>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    </body>

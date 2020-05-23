@@ -1,0 +1,80 @@
+
+<body style="background-image: url('assets/news-image1.jpg'); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <img src="assets/logo.png" style="max-width: 50px">
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarmenu">
+    <span class="navbar-toggler-icon" style="color: azure;"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarmenu" style="float: right;position: relative;left: 65%">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a routerLink="/admin" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
+      <li class="nav-item"><a routerLink="/employees" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Employee list</a></li>
+      <li class="nav-item"><a routerLink="/registeremployees" class="nav-link" routerLinkActive="active" style="color: azure;"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Job Applicants</a></li>
+
+      <li class="nav-item"><a  class="nav-link" (click)="onlogout()" routerLinkActive="active" style="color: azure;">Logout&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+
+    </ul>
+  </div>
+</nav>
+
+   <div class="container-fluid" >
+             <h3 style="text-align: center;
+    height: 80px;
+    position: relative;
+    top: 20px;
+    font-size: 40px;
+    font-weight: bolder;">Employee Data</h3>
+            <div class="card-body" style="opacity: 0.96;filter: blur(0px) brightness(106%);    background-color: #a8a9ac;
+    border-radius: 30px;">
+
+                <div class="table-responsive table mt-2 zg table-striped table-light" role="grid"
+                    aria-describedby="dataTable_info" style="opacity: 1;filter: blur(0px);background-color: #d7dadf;">
+                    <table class="table dataTable my-0" id="mydatatable">
+                        <thead>
+                            <tr
+                                style="background-color:rgb(14, 13, 13);opacity: 1;filter: brightness(111%) contrast(82%) saturate(99%);font-weight: bold;margin: 0;height: 53px;margin-right: 0px;color: rgb(10,11,23);">
+                                <th scope="col" style="color: white">S.No</th>
+                                <th scope="col" style="color: white">FirstName</th>
+                                <th scope="col" style="color: white">LastName</th>
+                                <th scope="col" style="color: white;">Age</th>
+                                <th scope="col" style="color: white;">Email</th>
+                                <th scope="col" style="color: white;">Phone</th>
+                                <th scope="col" style="color: white;">UserID</th>
+                                <th scope="col" style="color: white;">Password</th>
+                                <th scope="col" style="color: white;">Gender</th>
+                                <th scope="col" style="color: white;">Role</th>
+                                <th scope="col" style="color: white;">Specialization</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: rgb(4,5,7);">
+                            <tr *ngFor="let employee of employees | async">
+                                <td>{{employee.id}}</td>
+                                <td>{{employee.firstName}}</td>
+                                <td>{{employee.lastName}}</td>
+                                <td>{{employee.age}}</td>
+                                <td>{{employee.email}}</td>
+                                <td>{{employee.phone}}</td>
+                                <td>{{employee.userId}}</td>
+                                <td>{{employee.password}}</td>
+                                <td>{{employee.gender}}</td>
+                                <td>{{employee.role.roleName}}</td>
+                                <td>{{employee.specialization.specName}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    </body>

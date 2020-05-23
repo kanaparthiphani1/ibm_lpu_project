@@ -1,0 +1,347 @@
+#side1{
+  height: 40px;
+  width: 30px;
+  position: absolute;
+  transform: translateX(0px) scale(1.5);
+  z-index: 99;
+  transform: scale(0.9);
+  transition: all .5s;
+}
+#side2{
+  height: 40px;
+  width: 30px;
+  position: absolute;
+  transform: translateX(-100px);
+  z-index: 9;
+
+  transform: scale(0.9);
+  transition: all .5s;
+}
+.card1{
+  position: relative;
+
+  border-radius: 14px;
+  box-shadow: 3px 3px 15px #323131;
+  margin: 18px;
+
+  transition: box-shadow .3s;
+  display: inline-block;
+}
+.card1:hover{
+  box-shadow: 6px 6px 28px black;
+  cursor: pointer;
+}
+#side3{
+  height: 40px;
+  width: 30px;
+  position: absolute;
+  transform: translateX(100px);
+  z-index: 9;
+  transform: scale(0.9);
+  transition: all .5s;
+}
+#ViwDoc{
+  animation: fadeInRightBig; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s;
+}
+#pre {
+  height: 30px;
+  width: 100px;
+
+
+  font-size: 50px;
+  color: gray;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top: 300px;
+  transition: font-size .3s;
+
+  left: 29%;
+}
+#pre:hover{
+  cursor: pointer;
+  font-size: 55px;
+  color: black;
+}
+.mySlider{
+  right: 130px;
+  bottom: 40px;
+  position: relative;
+}
+.modal-content{
+  border-radius: 20px;
+  border-top-right-radius: 20px !important;
+  border-top-left-radius: 20px !important;
+}
+
+#nex{
+  height: 80px;
+  width: 80px;
+
+
+  font-size: 50px;
+  color: gray;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+
+  transition: font-size .3s;
+  right: 1px;
+  top: 300px;
+}
+#nex:hover{
+  cursor: pointer;
+  font-size: 55px;
+  color: black;
+}
+
+.input-group{
+  position: relative;
+  left:16%;
+  margin-top: 50px;
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
+  width: 67%;
+
+}
+.input-group > .mySearch{
+  width: 68%;
+  margin-bottom: 0px !important;
+  padding-bottom: 30px;
+
+}
+
+.cardUpper{
+  margin-left: 16%;
+  margin-top: 40px;
+}
+.card-img-top {
+  height: 280px;
+  background-position: center;
+  background-size: cover;
+}
+.Caption h3{
+
+  text-align: center;
+  position: relative;
+  top: 40px;
+  font-family: Josefin Sans;
+  font-size: 50px;
+
+}
+.Caption{
+  margin-bottom: 65px;
+}
+.card{
+  position: relative;
+
+  border-radius: 14px;
+  box-shadow: 3px 3px 15px #323131;
+  margin: 18px;
+
+  transition: box-shadow .3s;
+  display: inline-block;
+  animation: fadeInUp; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
+}
+.card:hover{
+  box-shadow: 6px 6px 28px black;
+  cursor: pointer;
+
+}
+.form-control{
+  height: 38px;
+
+
+}
+
+.mySubCap{
+  font-family: Oswald;
+  font-weight: bold;
+  color: darkred;
+  font-size: 75px;
+  animation: lightSpeedInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s;
+}
+.myCap1{
+  font-size: 65px;
+  font-family: Oswald;
+  font-weight: lighter;
+  animation: zoomInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("src/assets/pic6.jpeg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax1 {
+  /* The image used */
+  background-image: url("src/assets/pic16.jpeg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.caption {
+  position: relative;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.caption1 {
+  position: relative;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.caption2 {
+  position: relative;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.logorightspan{
+  width: 50%;
+
+  position: relative;
+
+  left: 80%;
+}
+.logorightspan img{
+  width: 10%;
+  margin-bottom: 13px;
+}
+.logoleftspan{
+
+  width: 50%;
+
+  position: relative;
+
+  right: 40px;
+  top: 10px;
+
+
+}
+.border1{
+  box-shadow: 2px 2px 15px black;
+  color: #e2e2e2;
+  border: 1px solid #0e0e0e!important;
+  width: 250px;
+  background-color: black;
+  position: relative;
+  left: 67%;
+  padding: 60px;
+  bottom: 160px;
+  border: 1px solid;
+  font-family: Raleway;
+  font-style: italic;
+  border-radius: 16px;
+}
+.border{
+  box-shadow: 2px 2px 15px black;
+  color: #e2e2e2;
+  border: 1px solid #0e0e0e!important;
+  width: 250px;
+  background-color: #067b99;;
+  position: relative;
+  left: 160px;
+  padding: 60px;
+  bottom: 160px;
+  border: 1px solid;
+  font-family: Raleway;
+  font-style: italic;
+  border-radius: 16px;
+
+}
+.logoleftspan img{
+  width: 10%;
+  margin-bottom: 13px;
+
+}
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+.caption1 span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+.caption2 span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+.mySubCap1{
+  font-family: Oswald;
+  font-weight: bold;
+  color: #ffbe00;
+  font-size: 75px;
+  animation: bounceInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s;
+}
+.myCap2{
+  font-size: 65px;
+  font-family: Oswald;
+  font-weight: lighter;
+  animation: flipInY; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+
+}
+.mySubCap2{
+  font-family: Oswald;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 75px;
+  animation: lightSpeedInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s;
+}
+.carousel-caption{
+  position: absolute;
+  top: 20%;
+  color: #2d2c2c;
+  font-family: Oswald;
+  font-size: 100px;
+}
+.carousel-inner{
+  width:100%;
+  height: 500px;
+
+}
+.copyright-text
+{
+  margin:0
+}

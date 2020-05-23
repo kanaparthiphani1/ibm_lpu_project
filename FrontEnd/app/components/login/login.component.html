@@ -1,0 +1,266 @@
+<head>
+<style>
+  .modal {
+
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 60px;
+  }
+
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      border-radius: 20px;
+      width: 100%;
+    }
+  }
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+
+</style>
+</head>
+<header >
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="height: 65px;">
+    <div class="container">
+      <img style="max-width: 50px;
+    position: relative;
+    right: 100px;" src="assets/logo.png">
+      <img style="max-width: 100px;
+    position: relative;
+    right: 90px;" src="assets/name.png">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" style="cursor: pointer" (click)="onCLickHome()"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onJobApply()"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;Job Apply</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onLoginAdmin()"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onLoginEmployee()"><i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;Employee</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer"  (click)="onLogin()"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Signin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container1 animate" id="container" style=" margin-top: 2%;
+    margin-bottom: 5%;
+    /* margin-left: 20%; */
+    position: relative;
+
+    left: 10%;
+    width: 80%;
+">
+  <div class="form-container sign-up-container">
+
+
+    <form [formGroup]="addForm" (ngSubmit)="addUser()" style="top: 20px">
+      <h1>Create Account</h1>
+
+      <span>or use your email for registration</span>
+      <div class="form-row">
+        <div class="form-group col-md-6" style="width: 300px;">
+      <input type="text" placeholder="Enter First Name" [(ngModel)]="user.first_name" formControlName="firstName" autofocus />
+      <div *ngIf="submitted && addForm.controls.firstName.errors">
+        <div class="text-danger" *ngIf="addForm.controls.firstName.errors.required">
+          First Name is required..!
+        </div>
+        <div class="text-danger" *ngIf="addForm.controls.firstName.errors.pattern">
+          Only Alphabets allowed.First letter must be a Capital letter...!
+        </div>
+      </div>
+        </div>
+        <div class="form-group col-md-6">
+      <input type="text" placeholder="Enter Last Name" [(ngModel)]="user.last_name" formControlName="lastName" autofocus />
+      <div *ngIf="submitted && addForm.controls.lastName.errors">
+        <div class="text-danger" *ngIf="addForm.controls.lastName.errors.required">
+          First Name is required..!
+        </div>
+        <div class="text-danger" *ngIf="addForm.controls.lastName.errors.pattern">
+          Last Name length should not exceede 20 characters..!
+        </div>
+      </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="form-group col-md-6" style="width: 300px;">
+      <input type="number" placeholder="Age" [(ngModel)]="user.age" formControlName="age"/>
+        </div>
+        <div class="form-group col-md-6">
+      <div class="form-group row" style="margin-top: 10px">
+        <label for="sex" class="col-lg-3 col-md-4 col-sm-2 text-right " style="top: 10px">
+          Gender
+        </label>
+        <div class="col-lg-8 col-md-10 col-sm-10">
+          <select class="form-control" formControlName="sex" [(ngModel)]="user.gender" style="width:165px" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+            <option value="na">Others</option>
+          </select>
+
+          <div *ngIf="submitted && addForm.controls.sex.errors">
+            <div class="text-danger" *ngIf="addForm.controls.sex.errors.required">
+              Gender is required..!
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <input type="email" placeholder="Email" [(ngModel)]="user.email" formControlName="email"/>
+
+        <div *ngIf="submitted && addForm.controls.email.errors">
+          <div class="text-danger" *ngIf="addForm.controls.email.errors.required">
+            Email is required..!
+          </div>
+          <div class="text-danger" *ngIf="addForm.controls.email.errors.email">
+            Email is invalid..!
+          </div>
+        </div>
+
+      <input type="number" placeholder="Mobile number" [(ngModel)]="user.mobile_number" formControlName="phone_Number">
+        <div *ngIf="submitted && addForm.controls.phone_Number.errors">
+          <div class="text-danger" *ngIf="addForm.controls.phone_Number.errors.required">
+            Mobile Number is required..!
+          </div>
+          <div class="text-danger" *ngIf="addForm.controls.phone_Number.errors.pattern">
+            Mobile Number should be of 10 digits..!
+          </div>
+        </div>
+
+      <input [type]="passwordType" placeholder="Password" [(ngModel)]="user.password" formControlName="password" >
+
+      <div *ngIf="passwordShow" style="float: right;position: relative;
+    left: 160px;cursor: pointer;
+}">
+        <span style="font-size:15px;" class="fa fa-eye errspan" (click)="show()">hide password</span>
+      </div>
+      <div *ngIf="!passwordShow" style="float: right;position: relative;cursor: pointer;
+    left: 160px;
+}">
+        <span style="font-size: 15px;" class="fa fa-eye-slash errspan" (click)="show()">show password</span>
+      </div>
+
+        <div *ngIf="submitted && addForm.controls.password.errors">
+          <div class="text-danger" *ngIf="addForm.controls.password.errors.required">
+            Password is required..!
+          </div>
+          <div class="text-danger" *ngIf="addForm.controls.password.errors.pattern">
+            Only Alpha Numemrics allowed and must be of minimum 6 characters and maximum 8
+            characters..!
+          </div>
+        </div>
+
+
+      <button type="submit" style="    position: relative;
+    top: 25px;"> Sign Up</button>
+
+    </form>
+  </div>
+  <div class="form-container sign-in-container" style="margin: 100px 100px; height: 555px">
+
+    <form action="#" style="position: relative;right: 100px;top:30px" [formGroup]="addForm" (ngSubmit)="signin()">
+
+      <h1>Sign in</h1>
+
+      <span>or use your account</span>
+      <input type="email" placeholder="Email" formControlName="email" [(ngModel)]="auth.username"/>
+      <div *ngIf="submitted && addForm.controls.email.errors">
+        <div class="text-danger" *ngIf="addForm.controls.email.errors.required">
+          Email is required..!
+        </div>
+        <div class="text-danger" *ngIf="addForm.controls.email.errors.email">
+          Email is invalid..!
+        </div>
+      </div>
+      <input type="password" placeholder="Password" formControlName="password" [(ngModel)]="auth.password"/>
+      <div *ngIf="submitted && addForm.controls.password.errors">
+        <div class="text-danger" *ngIf="addForm.controls.password.errors.required">
+          Password is required..!
+        </div>
+        <div class="text-danger" *ngIf="addForm.controls.password.errors.pattern">
+          Only Alpha Numemrics allowed and must be of minimum 6 characters and maximum 8
+          characters..!
+        </div>
+      </div>
+      <a (click)="OnForget()">Forgot your password?</a>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <img src="../../../assets/logoname.png" style="max-width: 150px">
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" id="signIn">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+      <img src="../../../assets/logoname.png" style="max-width: 150px">
+        <p>Enter your personal details and start journey with us</p>
+        <button class="ghost" id="signUp">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="snackbar">This Email is Already Registered<br>You can login</div>
+<div id="snackbar1">You will shortly redirect to Otp Page</div>
+<div id="snackbar2">Wrong login Credentials</div>

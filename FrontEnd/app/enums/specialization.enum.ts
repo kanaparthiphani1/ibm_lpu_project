@@ -1,0 +1,10 @@
+export enum Specialization {
+
+    DENTIST,
+	PHYSICIAN,
+	CARDIOLOGIST,
+	DERMATOLOGIST,
+	ENTSPECIALIST,
+	RECEPTIONIST
+
+}

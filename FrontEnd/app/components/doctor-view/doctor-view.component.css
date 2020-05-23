@@ -1,0 +1,18 @@
+select {
+  width: 100%;
+  height: 50px;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: rgba(15, 90, 168, 0.54);
+  border: none;
+  border-bottom: 2px solid #052a5f;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+}
