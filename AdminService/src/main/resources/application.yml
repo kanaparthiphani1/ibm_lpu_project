@@ -1,0 +1,38 @@
+server:
+    port: 8081
+
+
+spring:
+  application:
+    name: admin-service
+  cloud:
+    consul:
+        discovery:
+          register: true
+          service-name: admin-service
+        host: localhost
+        port: 8500  
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Ardninahp@1
+    url: jdbc:mysql://localhost:3306/Project
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    password: Ardninahp@2
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+    username: kanaparthiphani0@gmail.com

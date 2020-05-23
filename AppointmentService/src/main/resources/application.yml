@@ -1,0 +1,22 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: appointment-service
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: appointment-service
+      host: localhost
+      port: 8500  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Ardninahp@1
+    url: jdbc:mysql://localhost:3306/Project
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    

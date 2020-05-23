@@ -1,0 +1,25 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Ardninahp@1
+    url: jdbc:mysql://localhost:3306/Project
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        
+  application:
+    name: doctor-service
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: doctor-service
+      host: localhost
+      port: 8500  
+feign:
+  hystrix:
+    enabled: true

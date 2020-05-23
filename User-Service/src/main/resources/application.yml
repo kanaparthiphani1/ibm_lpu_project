@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/Project
+    username: root
+    password: Ardninahp@1
+    
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    password: Ardninahp@2
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+    username: kanaparthiphani0@gmail.com
+
+
+  application:
+    name: user-service
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: user-service
+      host: localhost
+      port: 8500 
+      
+      
+server:
+  port: 8088

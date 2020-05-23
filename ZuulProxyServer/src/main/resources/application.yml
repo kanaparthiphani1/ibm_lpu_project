@@ -1,0 +1,47 @@
+info:
+  component: Edge Server
+
+
+#zuul:
+#  prefix: /api
+#  routes:
+#    product: 
+#        path: /product/**
+#        serviceId: product-service
+#     user: 
+#      path: /user/**
+#      serviceId: user-service          
+
+  
+#    account: 
+#      path: /account/**
+#      serviceId: account-service
+#    customer: 
+#      path: /customer/**
+#      serviceId: customer-service          
+
+#ribbon:
+#  eureka:
+#    enabled: true
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#    registerWithEureka: false
+      
+server:
+  port: 8765
+
+
+spring:
+  application:
+    name: proxy-server
+  cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: proxy-service
+      host: localhost
+      port: 8500  
+  
